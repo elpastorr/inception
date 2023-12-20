@@ -31,7 +31,7 @@ services:
     restart: always
     networks:
       - inception
-  
+
   wordpress:
     container_name: wordpress
     env_file:

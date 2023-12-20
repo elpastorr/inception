@@ -1,7 +1,7 @@
 
-all: configs up
+all: confs up
 
-configs:
+confs:
 	@ sudo mkdir -p /home/elpastor/data/db_data
 	@ sudo mkdir -p /home/elpastor/data/wp_data
 	@ sudo grep "elpastor.42.fr" /etc/hosts || sudo sh -c 'echo "127.0.0.1 elpastor.42.fr" >> /etc/hosts'
@@ -14,8 +14,9 @@ clean:
 
 fclean: clean
 	docker system prune --all --volumes --force
+
 	sudo rm -rf /home/elpastor/data
 
 re: fclean all
 
-.PHONY: all clean fclean re configs
+.PHONY: all clean fclean re confs
